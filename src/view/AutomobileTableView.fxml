@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="639.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AutomobileTableViewController">
+   <children>
+      <Label layoutX="17.0" layoutY="9.0" text="Car Dealer Application">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="automobileTableView" layoutX="198.0" layoutY="68.0" prefHeight="559.0" prefWidth="587.0">
+        <columns>
+            <TableColumn fx:id="automobileIdColumn" prefWidth="50.0" text="ID" visible="false" />
+            <TableColumn fx:id="makeColumn" prefWidth="70.0" text="Make" />
+            <TableColumn fx:id="modelColumn" prefWidth="80.0" text="Model" />
+            <TableColumn fx:id="styleColumn" prefWidth="70.0" text="Style" />
+            <TableColumn fx:id="conditionColumn" prefWidth="70.0" text="Condition" />
+            <TableColumn fx:id="modelYearColumn" prefWidth="89.0" text="Model Year" />
+            <TableColumn fx:id="priceColumn" prefWidth="91.0" text="Price" />
+            <TableColumn fx:id="mileageColumn" prefWidth="114.0" text="Mileage" />
+        </columns>
+      </TableView>
+      <VBox fillWidth="false" layoutX="9.0" layoutY="68.0" prefHeight="532.0" prefWidth="187.0" spacing="2.0">
+         <children>
+            <Label text="Condition">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <ListView fx:id="conditionListView" onMouseClicked="#conditionListViewSelectionChanged" prefHeight="49.0" prefWidth="187.0" />
+            <Separator prefWidth="200.0" />
+            <Label text="Make">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <ListView fx:id="makeListView" onMouseClicked="#makeListViewSelectionChanged" prefHeight="115.0" prefWidth="187.0" />
+            <Separator prefWidth="200.0" />
+            <Label text="Style">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <ListView fx:id="styleListView" onMouseClicked="#styleListViewSelectionChanged" prefHeight="82.0" prefWidth="187.0" />
+            <Separator prefWidth="200.0" />
+            <Label text="Price Range" />
+            <Separator prefWidth="200.0" />
+            <Label text="Min" />
+            <TextField fx:id="minPriceTextField" onAction="#priceRangeChanged" promptText="Min. price" />
+            <Label text="Max" />
+            <TextField fx:id="maxPriceTextField" onAction="#priceRangeChanged" promptText="Max. price" />
+            <Separator prefWidth="200.0" />
+            <Label text="Maximum Mileage" />
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="maxMilesTextField" onAction="#maxMileageChanged" promptText="Max. mileage" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
